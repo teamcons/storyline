@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Quilter.Services.FileManager {
+namespace storyline.Services.FileManager {
     public File tmp_file;
     public File file;
     public File cachedir;
@@ -26,8 +26,8 @@ namespace Quilter.Services.FileManager {
     private static string? cache;
     public static string get_cache_path () {
         if (cache == null) {
-            cache = Path.build_filename (Environment.get_user_data_dir (), "com.github.lainsce.quilter");
-            string cachedirpath = Path.build_filename (Environment.get_user_data_dir (), "com.github.lainsce.quilter");
+            cache = Path.build_filename (Environment.get_user_data_dir (), "io.github.teamcons.storyline");
+            string cachedirpath = Path.build_filename (Environment.get_user_data_dir (), "io.github.teamcons.storyline");
             cachedir = File.new_for_path (cachedirpath);
             try {
                 if (!cachedir.query_exists()) {
@@ -65,7 +65,7 @@ namespace Quilter.Services.FileManager {
             string text;
             string file_path = f.get_path ();
             files += file_path;
-            Quilter.Application.gsettings.set_strv("last-files", files);
+            storyline.Application.gsettings.set_strv("last-files", files);
             if (win.sidebar != null && f != null) {
                 win.sidebar.add_file (file_path);
             }

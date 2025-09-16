@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 *
 */
-namespace Quilter {
+namespace storyline {
     public class Widgets.Preview : WebKit.WebView {
         private static Preview? instance = null;
         public Widgets.EditView buf;
@@ -59,7 +59,7 @@ namespace Quilter {
 
             update_html_view ();
 
-            Quilter.Application.grsettings.notify["prefers-color-scheme"].connect (() => {
+            storyline.Application.grsettings.notify["prefers-color-scheme"].connect (() => {
                 update_html_view ();
             });
 
@@ -75,21 +75,21 @@ namespace Quilter {
         }
 
         private string set_stylesheet () {
-            if (Quilter.Application.gsettings.get_string("visual-mode") == "dark") {
-                string dark = Styles.quilterdark.css;
+            if (storyline.Application.gsettings.get_string("visual-mode") == "dark") {
+                string dark = Styles.storylinedark.css;
                 return dark;
-            } else if (Quilter.Application.gsettings.get_string("visual-mode") == "sepia") {
-                string sepia = Styles.quiltersepia.css;
+            } else if (storyline.Application.gsettings.get_string("visual-mode") == "sepia") {
+                string sepia = Styles.storylinesepia.css;
                 return sepia;
-            } else if (Quilter.Application.gsettings.get_string("visual-mode") == "light") {
-                string normal = Styles.quilter.css;
+            } else if (storyline.Application.gsettings.get_string("visual-mode") == "light") {
+                string normal = Styles.storyline.css;
                 return normal;
-            } else if (Quilter.Application.gsettings.get_string("visual-mode") == "") {
-                if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
-                    string dark = Styles.quilterdark.css;
+            } else if (storyline.Application.gsettings.get_string("visual-mode") == "") {
+                if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
+                    string dark = Styles.storylinedark.css;
                     return dark;
-                } else if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
-                    string normal = Styles.quilter.css;
+                } else if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
+                    string normal = Styles.storyline.css;
                     return normal;
                 }
             }
@@ -97,37 +97,37 @@ namespace Quilter {
         }
 
         private string set_font_stylesheet () {
-            if (Quilter.Application.gsettings.get_string("preview-font") == "serif") {
-                return Environment.get_user_data_dir () + "com.github.lainsce.quilter/font/serif.css";
-            } else if (Quilter.Application.gsettings.get_string("preview-font") == "sans") {
-                return Environment.get_user_data_dir () + "com.github.lainsce.quilter/font/sans.css";
-            } else if (Quilter.Application.gsettings.get_string("preview-font") == "mono") {
-                return Environment.get_user_data_dir () + "com.github.lainsce.quilter/font/mono.css";
+            if (storyline.Application.gsettings.get_string("preview-font") == "serif") {
+                return Environment.get_user_data_dir () + "io.github.teamcons.storyline/font/serif.css";
+            } else if (storyline.Application.gsettings.get_string("preview-font") == "sans") {
+                return Environment.get_user_data_dir () + "io.github.teamcons.storyline/font/sans.css";
+            } else if (storyline.Application.gsettings.get_string("preview-font") == "mono") {
+                return Environment.get_user_data_dir () + "io.github.teamcons.storyline/font/mono.css";
             }
 
-            return Environment.get_user_data_dir () + "com.github.lainsce.quilter/font/serif.css";
+            return Environment.get_user_data_dir () + "io.github.teamcons.storyline/font/serif.css";
         }
 
         private string set_highlight_stylesheet () {
-            if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
-                return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/styles/dark.min.css";
-            } else if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
-                if (Quilter.Application.gsettings.get_string("visual-mode") == "dark") {
-                    return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/styles/dark.min.css";
-                } else if (Quilter.Application.gsettings.get_string("visual-mode") == "sepia") {
-                    return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/styles/sepia.min.css";
+            if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
+                return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/styles/dark.min.css";
+            } else if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
+                if (storyline.Application.gsettings.get_string("visual-mode") == "dark") {
+                    return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/styles/dark.min.css";
+                } else if (storyline.Application.gsettings.get_string("visual-mode") == "sepia") {
+                    return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/styles/sepia.min.css";
                 } else {
-                    return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/styles/default.min.css";
+                    return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/styles/default.min.css";
                 }
             } else {
-                return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/styles/default.min.css";
+                return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/styles/default.min.css";
             }
         }
 
 
         private string set_highlight () {
-            if (Quilter.Application.gsettings.get_boolean("highlight")) {
-                string render = Environment.get_user_data_dir () + "/com.github.lainsce.quilter/highlight.js/lib/highlight.min.js";
+            if (storyline.Application.gsettings.get_boolean("highlight")) {
+                string render = Environment.get_user_data_dir () + "/io.github.teamcons.storyline/highlight.js/lib/highlight.min.js";
                 string hl = """
                     <link rel="stylesheet" href="%s">
                     <script defer src="%s" onload="hljs.initHighlightingOnLoad();"></script>
@@ -139,18 +139,18 @@ namespace Quilter {
         }
 
         private string set_center_headers () {
-            if (Quilter.Application.gsettings.get_boolean("center-headers")) {
-                return Environment.get_user_data_dir () + "/com.github.lainsce.quilter/center_headers/cheaders.css";
+            if (storyline.Application.gsettings.get_boolean("center-headers")) {
+                return Environment.get_user_data_dir () + "/io.github.teamcons.storyline/center_headers/cheaders.css";
             } else {
                 return "";
             }
         }
 
         private string set_latex () {
-            if (Quilter.Application.gsettings.get_boolean("latex")) {
-                string katex_main = Environment.get_user_data_dir () + "/com.github.lainsce.quilter/katex/katex.css";
-                string katex_js = Environment.get_user_data_dir () + "/com.github.lainsce.quilter/katex/katex.js";
-                string render = Environment.get_user_data_dir () + "/com.github.lainsce.quilter/katex/render.js";
+            if (storyline.Application.gsettings.get_boolean("latex")) {
+                string katex_main = Environment.get_user_data_dir () + "/io.github.teamcons.storyline/katex/katex.css";
+                string katex_js = Environment.get_user_data_dir () + "/io.github.teamcons.storyline/katex/katex.js";
+                string render = Environment.get_user_data_dir () + "/io.github.teamcons.storyline/katex/render.js";
                 string latex = """
                     <link rel="stylesheet" href="%s">
                     <script defer src="%s"></script>
@@ -163,8 +163,8 @@ namespace Quilter {
         }
 
         private string set_mermaid () {
-            if (Quilter.Application.gsettings.get_boolean("mermaid")) {
-                string render = Environment.get_user_data_dir () + "/com.github.lainsce.quilter/mermaid/mermaid.js";
+            if (storyline.Application.gsettings.get_boolean("mermaid")) {
+                string render = Environment.get_user_data_dir () + "/io.github.teamcons.storyline/mermaid/mermaid.js";
                 string mermaid = """
                     <script src="%s"></script>
                     <script>
@@ -307,8 +307,8 @@ namespace Quilter {
             string style = set_stylesheet ();
             string md = process_plugins (processed_mk);
 
-            bool focus_active = Quilter.Application.gsettings.get_boolean("focus-mode");
-            bool typewriter_active = Quilter.Application.gsettings.get_boolean("typewriter-scrolling");
+            bool focus_active = storyline.Application.gsettings.get_boolean("focus-mode");
+            bool typewriter_active = storyline.Application.gsettings.get_boolean("typewriter-scrolling");
             if (focus_active && typewriter_active) {
                 style += """
                 html {

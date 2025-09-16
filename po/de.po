@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.lainsce.quilter package.
+# This file is distributed under the same license as the io.github.teamcons.storyline package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.lainsce.quilter\n"
+"Project-Id-Version: io.github.teamcons.storyline\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 11:21-0300\n"
 "PO-Revision-Date: 2018-01-01 21:25+0100\n"
@@ -307,12 +307,12 @@ msgstr ""
 #: src/Widgets/Preferences.vala:164
 #, fuzzy
 msgid "Quilt Zwei"
-msgstr "Quilter"
+msgstr "storyline"
 
 #: src/Widgets/Preferences.vala:165
 #, fuzzy
 msgid "Quilt Vier"
-msgstr "Quilter"
+msgstr "storyline"
 
 #: src/Widgets/Preferences.vala:199
 msgid "Editor Font Size:"

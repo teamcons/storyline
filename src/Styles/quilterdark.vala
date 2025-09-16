@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-public class Quilter.Styles.quilterdark {
+public class storyline.Styles.storylinedark {
   public const string css="""
     html {
       font-size: 13pt;

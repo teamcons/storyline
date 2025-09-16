@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter.Widgets {
+namespace storyline.Widgets {
     public class Headerbar : Hdy.HeaderBar {
         public Gtk.Button back_button;
         public Gtk.Button new_button;
@@ -45,8 +45,8 @@ namespace Quilter.Widgets {
 
             var header_context = this.get_style_context ();
             header_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            header_context.add_class ("quilter-toolbar");
-            header_context.add_class ("quilter-toolbar-main");
+            header_context.add_class ("storyline-toolbar");
+            header_context.add_class ("storyline-toolbar-main");
 
             build_ui ();
             icons_toolbar ();
@@ -102,17 +102,17 @@ namespace Quilter.Widgets {
                 _("Find…")
             );
 
-            if (Quilter.Application.gsettings.get_boolean("searchbar") == false) {
+            if (storyline.Application.gsettings.get_boolean("searchbar") == false) {
                 search_button.set_active (false);
             } else {
-                search_button.set_active (Quilter.Application.gsettings.get_boolean("searchbar"));
+                search_button.set_active (storyline.Application.gsettings.get_boolean("searchbar"));
             }
 
             search_button.toggled.connect (() => {
     			if (search_button.active) {
-    				Quilter.Application.gsettings.set_boolean("searchbar", true);
+    				storyline.Application.gsettings.set_boolean("searchbar", true);
     			} else {
-    				Quilter.Application.gsettings.set_boolean("searchbar", false);
+    				storyline.Application.gsettings.set_boolean("searchbar", false);
     			}
 
             });
@@ -188,7 +188,7 @@ namespace Quilter.Widgets {
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
 
-            var mode_type = Quilter.Application.gsettings.get_string("visual-mode");
+            var mode_type = storyline.Application.gsettings.get_string("visual-mode");
 
             switch (mode_type) {
                 case "light":
@@ -207,19 +207,19 @@ namespace Quilter.Widgets {
             }
 
             color_button_dark.clicked.connect (() => {
-                Quilter.Application.gsettings.set_string("visual-mode", "dark");
+                storyline.Application.gsettings.set_string("visual-mode", "dark");
             });
 
             color_button_sepia.clicked.connect (() => {
-                Quilter.Application.gsettings.set_string("visual-mode", "sepia");
+                storyline.Application.gsettings.set_string("visual-mode", "sepia");
             });
 
             color_button_light.clicked.connect (() => {
-                Quilter.Application.gsettings.set_string("visual-mode", "light");
+                storyline.Application.gsettings.set_string("visual-mode", "light");
             });
 
             color_button_prefs.clicked.connect (() => {
-                Quilter.Application.gsettings.set_string("visual-mode", "");
+                storyline.Application.gsettings.set_string("visual-mode", "");
             });
 
             focusmode_button = new Gtk.ModelButton ();
@@ -232,7 +232,7 @@ namespace Quilter.Widgets {
             focusmode_button.add (focusmode_button_accellabel);
 
             focusmode_button.clicked.connect (() => {
-                Quilter.Application.gsettings.set_boolean("focus-mode", true);
+                storyline.Application.gsettings.set_boolean("focus-mode", true);
             });
 
             var view_mode = new Gtk.ModelButton ();
@@ -290,7 +290,7 @@ namespace Quilter.Widgets {
             preview_half_label_subtitle.sensitive = false;
             var preview_half_icon = new Gtk.Image.from_icon_name ("half-width-symbolic", Gtk.IconSize.BUTTON);
 
-            var prev_type = Quilter.Application.gsettings.get_string("preview-type");
+            var prev_type = storyline.Application.gsettings.get_string("preview-type");
 
             var preview_half_box = new Gtk.Grid ();
             preview_half_box.column_spacing = 12;
@@ -329,9 +329,9 @@ namespace Quilter.Widgets {
 
             preview_grid.row_selected.connect ((selected_row) => {
                 if (selected_row == preview_half_row) {
-                    Quilter.Application.gsettings.set_string("preview-type", "half");
+                    storyline.Application.gsettings.set_string("preview-type", "half");
                 } else if (selected_row == preview_full_row) {
-                    Quilter.Application.gsettings.set_string("preview-type", "full");
+                    storyline.Application.gsettings.set_string("preview-type", "full");
                 }
             });
 
@@ -421,7 +421,7 @@ namespace Quilter.Widgets {
                 }
             });
 
-            if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
+            if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
                 color_button_light.sensitive = false;
                 color_button_sepia.sensitive = false;
                 color_button_dark.sensitive = false;
@@ -429,7 +429,7 @@ namespace Quilter.Widgets {
                 top_grid.attach (prefer_label_button, 0, 1, 3, 1);
                 prefer_label_button.visible = true;
                 color_button_dark.set_active (true);
-            } else if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
+            } else if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
                 color_button_light.sensitive = true;
                 color_button_sepia.sensitive = true;
                 color_button_dark.sensitive = true;
@@ -447,8 +447,8 @@ namespace Quilter.Widgets {
                 color_button_light.set_active (true);
             }
 
-            Quilter.Application.grsettings.notify["prefers-color-scheme"].connect (() => {
-                if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
+            storyline.Application.grsettings.notify["prefers-color-scheme"].connect (() => {
+                if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK) {
                     color_button_light.sensitive = false;
                     color_button_sepia.sensitive = false;
                     color_button_dark.sensitive = false;
@@ -456,7 +456,7 @@ namespace Quilter.Widgets {
                     top_grid.attach (prefer_label_button, 0, 1, 3, 1);
                     prefer_label_button.visible = true;
                     color_button_dark.set_active (true);
-                } else if (Quilter.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
+                } else if (storyline.Application.grsettings.prefers_color_scheme == Granite.Settings.ColorScheme.NO_PREFERENCE) {
                     color_button_light.sensitive = true;
                     color_button_sepia.sensitive = true;
                     color_button_dark.sensitive = true;
@@ -475,7 +475,7 @@ namespace Quilter.Widgets {
                 }
             });
 
-            if (Quilter.Application.gsettings.get_string("preview-type") == "full") {
+            if (storyline.Application.gsettings.get_string("preview-type") == "full") {
                 top_grid.attach (view_mode, 0, 3, 4, 1);
                 view_mode.visible = true;
             } else {
@@ -483,8 +483,8 @@ namespace Quilter.Widgets {
                 view_mode.visible = true;
             }
 
-            Quilter.Application.gsettings.changed.connect (() => {
-                if (Quilter.Application.gsettings.get_string("preview-type") == "full") {
+            storyline.Application.gsettings.changed.connect (() => {
+                if (storyline.Application.gsettings.get_string("preview-type") == "full") {
                     top_grid.attach (view_mode, 0, 3, 4, 1);
                     view_mode.visible = true;
                 } else {

@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter.Widgets {
+namespace storyline.Widgets {
     public class Cheatsheet : Hdy.Window {
         private Gtk.Grid chgrid;
         private Gtk.Grid exgrid;
@@ -35,7 +35,7 @@ namespace Quilter.Widgets {
 
         construct {
             weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-            default_theme.add_resource_path ("/com/github/lainsce/quilter");
+            default_theme.add_resource_path ("/io/github/teamcons/storyline");
 
             get_chgrid ();
             get_exgrid ();
@@ -74,7 +74,7 @@ namespace Quilter.Widgets {
             });
 
             var context = this.get_style_context ();
-            context.add_class ("quilter-dialog-hb");
+            context.add_class ("storyline-dialog-hb");
         }
 
         private void get_chgrid () {

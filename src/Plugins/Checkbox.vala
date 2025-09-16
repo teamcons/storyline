@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-public class Quilter.Checkbox : Plugins.Plugin {
+public class storyline.Checkbox : Plugins.Plugin {
     private PatternSpec spec = new PatternSpec ("*[ ]*.*");
 
     construct {}

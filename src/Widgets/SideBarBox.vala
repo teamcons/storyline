@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter.Widgets {
+namespace storyline.Widgets {
     public class SideBarBox : Gtk.ListBoxRow {
         private Gtk.Label file_label;
         private Gtk.Label file_name_label;
@@ -62,7 +62,7 @@ namespace Quilter.Widgets {
             this.uid = uid_counter++;
             this.activatable = true;
             var sbr_context = this.get_style_context ();
-            sbr_context.add_class ("quilter-sidebar-box");
+            sbr_context.add_class ("storyline-sidebar-box");
 
             file_name_label = new Gtk.Label ("");
             file_name_label.halign = Gtk.Align.START;
@@ -84,7 +84,7 @@ namespace Quilter.Widgets {
             file_remove_button.tooltip_text = _("Remove File from Sidebar");
             var file_remove_button_style_context = file_remove_button.get_style_context ();
             file_remove_button_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            file_remove_button_style_context.add_class ("quilter-sidebar-button");
+            file_remove_button_style_context.add_class ("storyline-sidebar-button");
             file_remove_button.set_image (new Gtk.Image.from_icon_name ("window-close-symbolic", Gtk.IconSize.BUTTON));
 
             file_remove_button.clicked.connect (() => {
@@ -99,7 +99,7 @@ namespace Quilter.Widgets {
                     win.win_stack.set_visible_child_name ("welcome");
                     win.titlebar_stack.set_visible_child_name ("welcome-title");
                     win.sidebar.reveal_child = false;
-                    Quilter.Application.gsettings.set_boolean("sidebar", false);
+                    storyline.Application.gsettings.set_boolean("sidebar", false);
                 } else {
                     win.sidebar.column.select_row (((Widgets.SideBarBox)win.sidebar.column.get_row_at_index (this.uid - 1)));
                 }
@@ -107,7 +107,7 @@ namespace Quilter.Widgets {
 
             var file_labels_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             var flb_context = file_labels_box.get_style_context ();
-            flb_context.add_class ("quilter-flb");
+            flb_context.add_class ("storyline-flb");
             file_labels_box.pack_start (file_name_label);
             file_labels_box.pack_start (file_label);
 

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-public class Quilter.Styles.quiltersepia {
+public class storyline.Styles.storylinesepia {
   public const string css="""
     html {
       font-size: 13pt;

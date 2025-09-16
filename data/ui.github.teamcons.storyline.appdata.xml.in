@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-    <id>com.github.lainsce.quilter</id>
+    <id>io.github.teamcons.storyline</id>
     <metadata_license>CC0</metadata_license>
     <project_license>GPL-3.0+</project_license>
-    <name>Quilter</name>
+    <name>storyline</name>
     <summary>Focus on your writing</summary>
     <description>
         <p>Focus on your writing and write beautiful solid stories with the Focus Mode in tow in this Markdown editor</p>
@@ -20,11 +20,11 @@
         </ul>
     </description>
     <provides>
-        <binary>com.github.lainsce.quilter</binary>
+        <binary>io.github.teamcons.storyline</binary>
     </provides>
     <developer_name>Lains</developer_name>
-    <url type="homepage">https://github.com/lainsce/quilter/</url>
-    <url type="bugtracker">https://github.com/lainsce/quilter/issues</url>
+    <url type="homepage">https://github.com/lainsce/storyline/</url>
+    <url type="bugtracker">https://github.com/lainsce/storyline/issues</url>
     <url type="donation">https://patreon.com/lainsce</url>
     <content_rating type="oars-1.1">
         <content_attribute id="violence-cartoon">none</content_attribute>
@@ -144,7 +144,7 @@
          <description>
             <p>Release: Small Fixes</p>
             <ul>
-                <li>General small fixes to deliver the best Quilter can be.</li>
+                <li>General small fixes to deliver the best storyline can be.</li>
             </ul>
          </description>
         </release>
@@ -180,7 +180,7 @@
             <p>Release: Swift Scenes</p>
             <ul>
                 <li>Fixed: Would duplicate files when open in the sidebar</li>
-                <li>Fixed: If the sidebar was empty and Quilter was reopened, last file contents would still appear</li>
+                <li>Fixed: If the sidebar was empty and storyline was reopened, last file contents would still appear</li>
             </ul>
          </description>
         </release>
@@ -267,23 +267,23 @@
     <screenshots>
         <screenshot type="default">
             <caption>Light Mode</caption>
-            <image>https://raw.githubusercontent.com/lainsce/quilter/master/data/images/shot.png</image>
+            <image>https://raw.githubusercontent.com/lainsce/storyline/master/data/images/shot.png</image>
         </screenshot>
         <screenshot>
             <caption>Sepia Mode</caption>
-            <image>https://raw.githubusercontent.com/lainsce/quilter/master/data/images/shot-sepia.png</image>
+            <image>https://raw.githubusercontent.com/lainsce/storyline/master/data/images/shot-sepia.png</image>
         </screenshot>
         <screenshot>
             <caption>Dark Mode</caption>
-            <image>https://raw.githubusercontent.com/lainsce/quilter/master/data/images/shot-dark.png</image>
+            <image>https://raw.githubusercontent.com/lainsce/storyline/master/data/images/shot-dark.png</image>
         </screenshot>
         <screenshot>
             <caption>Focus Mode</caption>
-            <image>https://raw.githubusercontent.com/lainsce/quilter/master/data/images/shot-focused.png</image>
+            <image>https://raw.githubusercontent.com/lainsce/storyline/master/data/images/shot-focused.png</image>
         </screenshot>
         <screenshot>
             <caption>Preview Mode</caption>
-            <image>https://raw.githubusercontent.com/lainsce/quilter/master/data/images/shot-preview.png</image>
+            <image>https://raw.githubusercontent.com/lainsce/storyline/master/data/images/shot-preview.png</image>
         </screenshot>
     </screenshots>
     <custom>

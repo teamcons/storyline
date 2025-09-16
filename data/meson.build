@@ -2,35 +2,35 @@ fs = import('fs')
 
 icon_sizes = ['32', '48', '64', '128']
 
-configdir = fs.expanduser('~/.local/share/com.github.lainsce.quilter')
+configdir = fs.expanduser('~/.local/share/io.github.teamcons.storyline')
 
 foreach i : icon_sizes
     install_data(
-        join_paths('icons', i, 'com.github.lainsce.quilter.svg'),
+        join_paths('icons', i, 'io.github.teamcons.storyline.svg'),
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps')
     )
 endforeach
 
 foreach i : icon_sizes
     install_data(
-        join_paths('icons', i, 'com.github.lainsce.quilter.svg'),
+        join_paths('icons', i, 'io.github.teamcons.storyline.svg'),
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i + '@2', 'apps')
     )
 endforeach
 
 install_data(
-    join_paths('icons', '16', 'com.github.lainsce.quilter-symbolic.svg'),
+    join_paths('icons', '16', 'io.github.teamcons.storyline-symbolic.svg'),
     install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'symbolic', 'apps')
 )
 
 install_data(
-    'com.github.lainsce.quilter.gschema.xml',
+    'io.github.teamcons.storyline.gschema.xml',
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
 i18n.merge_file(
-    input: 'com.github.lainsce.quilter.desktop.in',
-    output: 'com.github.lainsce.quilter.desktop',
+    input: 'io.github.teamcons.storyline.desktop.in',
+    output: 'io.github.teamcons.storyline.desktop',
     po_dir: join_paths(meson.source_root(), 'po', 'extra'),
     type: 'desktop',
     install: true,
@@ -38,25 +38,25 @@ i18n.merge_file(
 )
 
 i18n.merge_file(
-    input: 'com.github.lainsce.quilter.appdata.xml.in',
-    output: 'com.github.lainsce.quilter.appdata.xml',
+    input: 'io.github.teamcons.storyline.appdata.xml.in',
+    output: 'io.github.teamcons.storyline.appdata.xml',
     po_dir: join_paths(meson.source_root(), 'po', 'extra'),
     install: true,
     install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 install_data(
-    join_paths('schemes', 'com.github.lainsce.quilter.xml'),
+    join_paths('schemes', 'io.github.teamcons.storyline.xml'),
     install_dir: join_paths(get_option('datadir'), 'gtksourceview-4', 'styles')
 )
 
 install_data(
-    join_paths('schemes', 'com.github.lainsce.quilter-sepia.xml'),
+    join_paths('schemes', 'io.github.teamcons.storyline-sepia.xml'),
     install_dir: join_paths(get_option('datadir'), 'gtksourceview-4', 'styles')
 )
 
 install_data(
-    join_paths('schemes', 'com.github.lainsce.quilter-dark.xml'),
+    join_paths('schemes', 'io.github.teamcons.storyline-dark.xml'),
     install_dir: join_paths(get_option('datadir'), 'gtksourceview-4', 'styles')
 )
 

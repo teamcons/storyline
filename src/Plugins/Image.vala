@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-public class Quilter.Image : Plugins.Plugin {
+public class storyline.Image : Plugins.Plugin {
     private PatternSpec spec = new PatternSpec ("*/*:image*");
 
     construct {}

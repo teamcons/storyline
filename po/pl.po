@@ -1,9 +1,9 @@
-# Polish translations for Quilter.
-# This file is distributed under the same license as the com.github.lainsce.quilter.
+# Polish translations for storyline.
+# This file is distributed under the same license as the io.github.teamcons.storyline.
 # Created by Michał Rowicki <mirowicki@gmail.com>, updated by Michał Nowakowski <nowakowski@offshore.rocks>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.lainsce.quilter\n"
+"Project-Id-Version: io.github.teamcons.storyline\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 11:21-0300\n"
 "PO-Revision-Date: 2019-11-18 17:08+0100\n"
@@ -309,12 +309,12 @@ msgstr ""
 #: src/Widgets/Preferences.vala:164
 #, fuzzy
 msgid "Quilt Zwei"
-msgstr "Quilter"
+msgstr "storyline"
 
 #: src/Widgets/Preferences.vala:165
 #, fuzzy
 msgid "Quilt Vier"
-msgstr "Quilter"
+msgstr "storyline"
 
 #: src/Widgets/Preferences.vala:199
 msgid "Editor Font Size:"

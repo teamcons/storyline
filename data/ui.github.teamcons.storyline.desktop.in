@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Quilter
+Name=storyline
 Comment=Focus on your writing
-Exec=com.github.lainsce.quilter %U
-Icon=com.github.lainsce.quilter
+Exec=io.github.teamcons.storyline %U
+Icon=io.github.teamcons.storyline
 Keywords=Text;Markdown;Editor;
 MimeType=text/markdown;text/x-markdown;
 Terminal=false

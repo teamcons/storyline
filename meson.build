@@ -1,4 +1,4 @@
-project('com.github.lainsce.quilter', ['vala', 'c'], version: '3.0.0')
+project('io.github.teamcons.storyline', ['vala', 'c'], version: '3.0.0')
 gnome = import('gnome')
 i18n = import('i18n')
 
@@ -39,9 +39,9 @@ sources = files(
     'src/Plugins/Highlighter.vala',
     'src/Plugins/Superscript.vala',
     'src/Plugins/Subscript.vala',
-    'src/Styles/quilter.vala',
-    'src/Styles/quilterdark.vala',
-    'src/Styles/quiltersepia.vala',
+    'src/Styles/storyline.vala',
+    'src/Styles/storylinedark.vala',
+    'src/Styles/storylinesepia.vala',
     'src/Constants/AppSettings.vala',
     'src/Services/FileManager.vala',
     'src/Services/ExportUtils.vala',

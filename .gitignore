@@ -1,9 +1,9 @@
 build/
 ~*
 *~
-debian/com.github.lainsce.quilter.debhelper.log
-debian/com.github.lainsce.quilter.substvars
-debian/com.github.lainsce.quilter/
+debian/io.github.teamcons.storyline.debhelper.log
+debian/io.github.teamcons.storyline.substvars
+debian/io.github.teamcons.storyline/
 debian/debhelper-build-stamp
 debian/files
 obj-x86_64-linux-gnu/

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Quilter.Services.DialogUtils {
+namespace storyline.Services.DialogUtils {
     public Gtk.FileChooserNative create_file_chooser (string title, Gtk.FileChooserAction action) {
         var chooser = new Gtk.FileChooserNative (title, null, action, null, null);
         var filter1 = new Gtk.FileFilter ();

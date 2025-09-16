@@ -18,10 +18,10 @@
 *
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
-namespace Quilter {
+namespace storyline {
     public abstract class Plugins.Plugin : GLib.Object {
-        private const string CHILD_SCHEMA_ID = "com.github.lainsce.quilter.plugin_data.plugin";
-        private const string CHILD_PATH = "/com/github/lainsce/quilter/plugin_data/plugin/%s";
+        private const string CHILD_SCHEMA_ID = "io.github.teamcons.storyline.plugin_data.plugin";
+        private const string CHILD_PATH = "/io/github/teamcons/storyline/plugin_data/plugin/%s";
 
         protected Settings? settings = null;
         protected bool state = true;
@@ -66,7 +66,7 @@ namespace Quilter {
         }
 
         protected void connect_settings (string setting) {
-            Quilter.Application.gsettings.bind (setting, this, "active", SettingsBindFlags.DEFAULT);
+            storyline.Application.gsettings.bind (setting, this, "active", SettingsBindFlags.DEFAULT);
         }
     }
 }

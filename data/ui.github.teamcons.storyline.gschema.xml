@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <schemalist>
-  <schema id="com.github.lainsce.quilter" path="/com/github/lainsce/quilter/">
+  <schema id="io.github.teamcons.storyline" path="/io/github/teamcons/storyline/">
     <key name="window-position" type="(ii)">
       <default>(-1,-1)</default>
       <summary>Window position</summary>
@@ -24,17 +24,17 @@
     <key name="focus-mode" type="b">
       <default>false</default>
       <summary>Focus Mode</summary>
-      <description>Whether Quilter should be in Focus Mode</description>
+      <description>Whether storyline should be in Focus Mode</description>
     </key>
     <key name="typewriter-scrolling" type="b">
       <default>false</default>
       <summary>Typewriter Scrolling</summary>
-      <description>Whether Quilter should use Typewriter Scrolling</description>
+      <description>Whether storyline should use Typewriter Scrolling</description>
     </key>
     <key name="visual-mode" type="s">
       <default>''</default>
       <summary>Visual Mode</summary>
-      <description>What visual style to use for Quilter (Default is blank which means Light UI)</description>
+      <description>What visual style to use for storyline (Default is blank which means Light UI)</description>
     </key>
     <key name="autosave" type="b">
       <default>true</default>
@@ -48,37 +48,37 @@
     <key name="current-file" type="s">
       <default>''</default>
       <summary>Current working file</summary>
-      <description>The c.w.f. in Quilter</description>
+      <description>The c.w.f. in storyline</description>
     </key>
     <key name="last-files" type="as">
       <default>[]</default>
       <summary>Last opened files</summary>
-      <description>The last opened files in Quilter</description>
+      <description>The last opened files in storyline</description>
     </key>
     <key name="edit-font-type" type="s">
       <default>'mono'</default>
       <summary>Font used on Edit View</summary>
-      <description>The user-preferred font to use in Edit in Quilter</description>
+      <description>The user-preferred font to use in Edit in storyline</description>
     </key>
     <key name="preview-font" type="s">
       <default>'serif'</default>
       <summary>Font used on Preview View</summary>
-      <description>The user-preferred font to use in Preview in Quilter</description>
+      <description>The user-preferred font to use in Preview in storyline</description>
     </key>
     <key name="preview-type" type="s">
       <default>'full'</default>
       <summary>Preview type for the UI</summary>
-      <description>The user-preferred preview type to use in Preview in Quilter</description>
+      <description>The user-preferred preview type to use in Preview in storyline</description>
     </key>
     <key name="full-width-changed" type="b">
       <default>true</default>
       <summary>Full-Width Pane to Show</summary>
-      <description>The user-preferred full-width shown pane in Quilter</description>
+      <description>The user-preferred full-width shown pane in storyline</description>
     </key>
     <key name="track-type" type="s">
       <default>'lines'</default>
       <summary>Tracking type for the Statusbar</summary>
-      <description>The user-preferred tracking to use in Edit in Quilter</description>
+      <description>The user-preferred tracking to use in Edit in storyline</description>
     </key>
     <key name="spellcheck" type="b">
       <default>true</default>
@@ -115,15 +115,15 @@
     </key>
     <key name="fullscreen" type="b">
       <default>false</default>
-      <summary>Whether Quilter should be fullscreen or not</summary>
+      <summary>Whether storyline should be fullscreen or not</summary>
     </key>
     <key name="pos" type="b">
       <default>false</default>
-      <summary>Whether Quilter should highlight parts of speech or not</summary>
+      <summary>Whether storyline should highlight parts of speech or not</summary>
     </key>
     <key name="center-headers" type="b">
       <default>false</default>
-      <summary>Whether Quilter's Preview should center h1 thru h3</summary>
+      <summary>Whether storyline's Preview should center h1 thru h3</summary>
     </key>
     <key name="spacing" type="i">
       <default>4</default>

@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-public class Quilter.Filep : Plugins.Plugin {
+public class storyline.Filep : Plugins.Plugin {
     private PatternSpec spec = new PatternSpec ("*/*:file*");
 
     construct {}

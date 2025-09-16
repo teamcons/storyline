@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter.Widgets {
+namespace storyline.Widgets {
     public class SearchBar : Gtk.SearchBar {
         private EditView? text_view = null;
         private Gtk.Button replace_all_tool_button;
@@ -77,12 +77,12 @@ namespace Quilter.Widgets {
             grid.attach (replace_grid, 0, 1);
 
             var context = this.get_style_context ();
-            context.add_class ("quilter-searchbar");
+            context.add_class ("storyline-searchbar");
 
             this.add (grid);
             this.text_view = window.edit_view_content;
             this.text_buffer = text_view.get_buffer ();
-            this.set_search_mode (Quilter.Application.gsettings.get_boolean("searchbar"));
+            this.set_search_mode (storyline.Application.gsettings.get_boolean("searchbar"));
         }
 
         public void search_entry_item () {

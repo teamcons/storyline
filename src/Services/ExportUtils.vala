@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Quilter.Services.ExportUtils {
+namespace storyline.Services.ExportUtils {
     public MainWindow window;
     public static File? export_html (string? file_path = null) {
         Widgets.Preview.get_instance ().update_html_view ();
@@ -48,11 +48,11 @@ namespace Quilter.Services.ExportUtils {
         window.render_func ();
         int type_of_mode = 0;
 
-        if (Quilter.Application.gsettings.get_string("visual-mode") == "dark") {
-            Quilter.Application.gsettings.set_string("visual-mode", "light");
+        if (storyline.Application.gsettings.get_string("visual-mode") == "dark") {
+            storyline.Application.gsettings.set_string("visual-mode", "light");
             type_of_mode = 1;
-        } else if (Quilter.Application.gsettings.get_string("visual-mode") == "sepia") {
-            Quilter.Application.gsettings.set_string("visual-mode", "light");
+        } else if (storyline.Application.gsettings.get_string("visual-mode") == "sepia") {
+            storyline.Application.gsettings.set_string("visual-mode", "light");
             type_of_mode = 2;
         }
 
@@ -97,10 +97,10 @@ namespace Quilter.Services.ExportUtils {
         op.print ();
 
         if (type_of_mode == 1) {
-            Quilter.Application.gsettings.set_string("visual-mode", "dark");
+            storyline.Application.gsettings.set_string("visual-mode", "dark");
             type_of_mode = 0;
         } else if (type_of_mode == 2) {
-            Quilter.Application.gsettings.set_string("visual-mode", "sepia");
+            storyline.Application.gsettings.set_string("visual-mode", "sepia");
             type_of_mode = 0;
         }
 

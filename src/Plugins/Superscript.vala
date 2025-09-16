@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-public class Quilter.Superscript : Plugins.Plugin {
+public class storyline.Superscript : Plugins.Plugin {
     private PatternSpec spec = new PatternSpec ("*^*^*");
 
     construct {}

@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-namespace Quilter {
+namespace storyline {
     public class Plugins.PluginManager : GLib.Object {
         private static PluginManager? instance = null;
 

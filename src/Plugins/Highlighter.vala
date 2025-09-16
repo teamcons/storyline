@@ -19,7 +19,7 @@
 * Co-authored by: Felipe Escoto <felescoto95@hotmail.com>
 */
 
-public class Quilter.Highlighter : Plugins.Plugin {
+public class storyline.Highlighter : Plugins.Plugin {
     private PatternSpec spec = new PatternSpec ("*==*==*");
 
     construct {}
@@ -52,9 +52,9 @@ public class Quilter.Highlighter : Plugins.Plugin {
         int initial = line_.index_of ("==") + 2;
         int last = line_.index_of ("==", initial);
         string subline = line_.substring (initial, last - initial);
-        if (Quilter.Application.gsettings.get_string("visual-mode") == "dark") {
+        if (storyline.Application.gsettings.get_string("visual-mode") == "dark") {
             return line_.replace("==%s==".printf(subline), """<span style="background-color:#0DBCEE; color:#000; border: 3px solid #0DBCEE; border-radius: 4px;">%s</span>""".printf(subline));
-        } if (Quilter.Application.gsettings.get_string("visual-mode") == "sepia") {
+        } if (storyline.Application.gsettings.get_string("visual-mode") == "sepia") {
             return line_.replace("==%s==".printf(subline), """<span style="background-color:#00897B; color:#FFF; border: 3px solid #00897b; border-radius: 4px;">%s</span>""".printf(subline));
         } else {
             return line_.replace("==%s==".printf(subline), """<span style="background-color:#0EBAFB; color:#FFF; border: 3px solid #0EBAFB; border-radius: 4px;">%s</span>""".printf(subline));

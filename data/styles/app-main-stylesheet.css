@@ -61,7 +61,7 @@ window.unified decoration-overlay {
     background-color: transparent;
 }
 
-.quilter-searchbar {
+.storyline-searchbar {
     border-top-color: transparent;
     border-bottom: 1px solid alpha (black, 0.25);
     box-shadow: 0 1px transparent inset;
@@ -69,21 +69,21 @@ window.unified decoration-overlay {
     background-color: shade(@color_primary, 0.95);
 }
 
-.quilter-toolbar-main {
+.storyline-toolbar-main {
     box-shadow: none;
 }
 
-.quilter-toolbar-side {
+.storyline-toolbar-side {
     box-shadow: none;
     margin: 0;
     padding: 0;
 }
 
-.quilter-toolbar-side .titlebutton {
+.storyline-toolbar-side .titlebutton {
     margin: 0 8px;
 }
 
-.quilter-toolbar .image-button {
+.storyline-toolbar .image-button {
     border-radius: 8px;
     background: transparent;
     box-shadow: none;
@@ -91,19 +91,19 @@ window.unified decoration-overlay {
     padding: 8px;
 }
 
-.quilter-sidebar {
+.storyline-sidebar {
     margin: 0px;
 }
 
-.quilter-flb label {
+.storyline-flb label {
     color: @text_color;
 }
 
-.quilter-menu:hover {
+.storyline-menu:hover {
     border: 1px solid alpha (black, 0.25);
 }
 
-.quilter-cbt button {
+.storyline-cbt button {
     background: none;
     color: black;
     border: 1px solid alpha (black, 0);
@@ -111,11 +111,11 @@ window.unified decoration-overlay {
 	border-radius: 8px;
 }
 
-.quilter-cbt button:hover {
+.storyline-cbt button:hover {
     border: 1px solid alpha (black, 0.25);
 }
 
-.quilter-focus-button {
+.storyline-focus-button {
     -gtk-icon-shadow: none;
     min-width: 24px;
     min-height: 24px;
@@ -127,31 +127,31 @@ window.unified decoration-overlay {
     border-right: 1px solid alpha (black, 0.25);
 }
 
-.quilter-sidebar-box button {
+.storyline-sidebar-box button {
   color: @text_color;
 }
 
-.quilter-sidebar-switcher label {
+.storyline-sidebar-switcher label {
     font-size: 0.9rem;
 }
 
-.quilter-sidebar-switcher button {
+.storyline-sidebar-switcher button {
     box-shadow: none;
     background-image: none;
     border-radius: 0px;
 }
 
-.quilter-sidebar-switcher button label {
+.storyline-sidebar-switcher button label {
     font-weight: 700;
     opacity: 0.8;
 }
 
-.quilter-sidebar-switcher button:not(:checked):not(:active) label {
+.storyline-sidebar-switcher button:not(:checked):not(:active) label {
     font-weight: 500;
     opacity: 0.8;
 }
 
-.quilter-toolbar .title {
+.storyline-toolbar .title {
     font-weight: 700;
 }
 

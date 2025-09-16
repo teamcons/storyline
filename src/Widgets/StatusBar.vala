@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter {
+namespace storyline {
     public class Widgets.StatusBar : Gtk.Revealer {
         public Gtk.ActionBar actionbar;
         public Gtk.Label linecount_label;
@@ -42,19 +42,19 @@ namespace Quilter {
 
 	        track_words = new Gtk.RadioButton.with_label (null, _("Words"));
 	        track_words.toggled.connect (() => {
-	            Quilter.Application.gsettings.set_string("track-type", "words");
+	            storyline.Application.gsettings.set_string("track-type", "words");
 	            update_wordcount ();
 	        });
 
 	        track_lines = new Gtk.RadioButton.with_label_from_widget (track_words, _("Lines"));
 	        track_lines.toggled.connect (() => {
-	            Quilter.Application.gsettings.set_string("track-type", "lines");
+	            storyline.Application.gsettings.set_string("track-type", "lines");
 	            update_linecount ();
             });
             
             track_rtc = new Gtk.RadioButton.with_label_from_widget (track_words, _("Reading Time"));
 	        track_rtc.toggled.connect (() => {
-	            Quilter.Application.gsettings.set_string("track-type", "rtc");
+	            storyline.Application.gsettings.set_string("track-type", "rtc");
 	            update_readtimecount ();
 	        });
 
@@ -77,22 +77,22 @@ namespace Quilter {
             track_type_menu.label = "";
 
             var menu_context = track_type_menu.get_style_context ();
-            menu_context.add_class ("quilter-menu");
+            menu_context.add_class ("storyline-menu");
             menu_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
             actionbar.pack_end (track_type_menu);
 
-            if (Quilter.Application.gsettings.get_string("track-type") == "words") {
+            if (storyline.Application.gsettings.get_string("track-type") == "words") {
                 update_wordcount ();
-            } else if (Quilter.Application.gsettings.get_string("track-type") == "lines") {
+            } else if (storyline.Application.gsettings.get_string("track-type") == "lines") {
                 update_linecount ();
-            } else if (Quilter.Application.gsettings.get_string("track-type") == "rtc") {
+            } else if (storyline.Application.gsettings.get_string("track-type") == "rtc") {
                 update_readtimecount ();
             }
 
             this.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
             this.add (actionbar);
-            this.reveal_child = Quilter.Application.gsettings.get_boolean("statusbar");
+            this.reveal_child = storyline.Application.gsettings.get_boolean("statusbar");
         }
 
         public void update_wordcount () {

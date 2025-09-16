@@ -1,10 +1,10 @@
-# ![icon](data/images/icon.png) Quilter
+# ![icon](data/images/icon.png) storyline
 
 ## Focus on your writing
 
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.lainsce.quilter)
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/io.github.teamcons.storyline)
 
-[![Build Status](https://travis-ci.org/lainsce/quilter.svg?branch=master)](https://travis-ci.org/lainsce/quilter)
+[![Build Status](https://travis-ci.org/lainsce/storyline.svg?branch=master)](https://travis-ci.org/lainsce/storyline)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 ![Screenshot](data/images/shot.png)
@@ -46,12 +46,12 @@ sudo ninja install
 
 ## Arch Linux
 
-Arch Linux users can find Quilter under the name [quilter-git](https://aur.archlinux.org/packages/quilter-git/) in the **AUR**:
+Arch Linux users can find storyline under the name [storyline-git](https://aur.archlinux.org/packages/storyline-git/) in the **AUR**:
 
-`$ <aur_helper> -S quilter-git`
+`$ <aur_helper> -S storyline-git`
 
 ## Fedora
 
-Fedora users can find Quilter under the name [quilter](https://src.fedoraproject.org/rpms/quilter) in official repository:
+Fedora users can find storyline under the name [storyline](https://src.fedoraproject.org/rpms/storyline) in official repository:
 
-`$ sudo dnf install quilter`
+`$ sudo dnf install storyline`

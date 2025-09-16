@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-namespace Quilter.Widgets {
+namespace storyline.Widgets {
     public class SideBar : Gtk.Revealer {
         public Gtk.ListBox column;
         private Widgets.SideBarBox[] rows;
@@ -48,7 +48,7 @@ namespace Quilter.Widgets {
         private static SideBar? instance = null;
         public static SideBar get_instance () {
             if (instance == null) {
-                instance = new Widgets.SideBar (Quilter.Application.win, Quilter.Application.win.edit_view_content);
+                instance = new Widgets.SideBar (storyline.Application.win, storyline.Application.win.edit_view_content);
             }
 
             return instance;
@@ -86,7 +86,7 @@ namespace Quilter.Widgets {
 
             stackswitcher = new Hdy.ViewSwitcher ();
             var sw_context = stackswitcher.get_style_context ();
-            sw_context.add_class ("quilter-sidebar-switcher");
+            sw_context.add_class ("storyline-sidebar-switcher");
             stackswitcher.stack = stack;
 
             header.has_subtitle = false;
@@ -96,20 +96,20 @@ namespace Quilter.Widgets {
 
             var this_context = header.get_style_context ();
             this_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            this_context.add_class ("quilter-toolbar-side");
+            this_context.add_class ("storyline-toolbar-side");
 
             var main_grid = new Gtk.Grid ();
             main_grid.orientation = Gtk.Orientation.VERTICAL;
             main_grid.add (header);
             main_grid.add (scrolled_box);
-            main_grid.get_style_context ().add_class ("quilter-sidebar");
+            main_grid.get_style_context ().add_class ("storyline-sidebar");
 
             add (main_grid);
 
             var sb_context = this.get_style_context ();
-            sb_context.add_class ("quilter-sidebar");
+            sb_context.add_class ("storyline-sidebar");
             this.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            this.reveal_child = Quilter.Application.gsettings.get_boolean ("sidebar");
+            this.reveal_child = storyline.Application.gsettings.get_boolean ("sidebar");
         }
 
         public Gtk.Widget sidebar_files_list () {
@@ -122,8 +122,8 @@ namespace Quilter.Widgets {
             column.margin_top = 6;
             column.margin_start = column.margin_end = 12;
 
-            for (int i = 0; i < Quilter.Application.gsettings.get_strv("last-files").length; i++) {
-                rows += add_file (Quilter.Application.gsettings.get_strv("last-files")[i]);
+            for (int i = 0; i < storyline.Application.gsettings.get_strv("last-files").length; i++) {
+                rows += add_file (storyline.Application.gsettings.get_strv("last-files")[i]);
             }
 
             column.row_selected.connect ((selected_row) => {
@@ -135,7 +135,7 @@ namespace Quilter.Widgets {
                     row = get_selected_row ();
                     string text = "";
                     GLib.FileUtils.get_contents (row.path, out text);
-                    Quilter.Application.gsettings.set_string("current-file", row.path);
+                    storyline.Application.gsettings.set_string("current-file", row.path);
 
                     if (win.edit_view_content.modified) {
                         Services.FileManager.save_file (row.path, text);
@@ -227,8 +227,8 @@ namespace Quilter.Widgets {
         }
 
         public void outline_populate () {
-            if (Quilter.Application.gsettings.get_string("current-file") != "" || Quilter.Application.gsettings.get_string("current-file") != _("No Documents Open")) {
-               var file = GLib.File.new_for_path (Quilter.Application.gsettings.get_string("current-file"));
+            if (storyline.Application.gsettings.get_string("current-file") != "" || storyline.Application.gsettings.get_string("current-file") != _("No Documents Open")) {
+               var file = GLib.File.new_for_path (storyline.Application.gsettings.get_string("current-file"));
                if (file != null && file.query_exists ()) {
                     try {
                         string buffer = "";

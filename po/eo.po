@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.lainsce.quilter\n"
+"Project-Id-Version: io.github.teamcons.storyline\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 11:21-0300\n"
 "PO-Revision-Date: \n"
@@ -311,7 +311,7 @@ msgstr "Quilt Mono (egalpaŝa)"
 #: src/Widgets/Preferences.vala:164
 #, fuzzy
 msgid "Quilt Zwei"
-msgstr "Quilter"
+msgstr "storyline"
 
 #: src/Widgets/Preferences.vala:165
 msgid "Quilt Vier"

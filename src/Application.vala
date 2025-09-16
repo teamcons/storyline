@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 *
 */
-namespace Quilter {
+namespace storyline {
     public class Application : Gtk.Application {
         private static bool open_view = false;
         private static bool print_ver = false;
@@ -29,13 +29,13 @@ namespace Quilter {
         public static string[] supported_mimetypes;
 
         static construct {
-            gsettings = new GLib.Settings ("com.github.lainsce.quilter");
+            gsettings = new GLib.Settings ("io.github.teamcons.storyline");
         }
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
             flags |= ApplicationFlags.HANDLES_OPEN;
-            application_id = "com.github.lainsce.quilter";
+            application_id = "io.github.teamcons.storyline";
 
             supported_mimetypes = {"text/markdown"};
             register_default_handler ();
@@ -50,7 +50,7 @@ namespace Quilter {
         public static int main (string[] args) {
             Intl.setlocale (LocaleCategory.ALL, "");
 
-            var app = new Quilter.Application ();
+            var app = new storyline.Application ();
             return app.run (args);
         }
 
@@ -67,7 +67,7 @@ namespace Quilter {
         protected override int command_line (ApplicationCommandLine command_line) {
             string[] args = command_line.get_arguments ();
             var context = new OptionContext ("File");
-            context.add_main_entries (entries, "com.github.lainsce.quilter");
+            context.add_main_entries (entries, "io.github.teamcons.storyline");
             context.add_group (Gtk.get_option_group (true));
             int unclaimed_args;
 
@@ -81,7 +81,7 @@ namespace Quilter {
             }
 
             if (print_ver) {
-                stdout.printf ("Quilter - Copyright 2017-2020 Lains\n");
+                stdout.printf ("storyline - Copyright 2017-2020 Lains\n");
                 return 0;
             } else {
                 new_win ();
@@ -191,9 +191,9 @@ namespace Quilter {
         }
 
         private static void register_default_handler () {
-            var app_info = new DesktopAppInfo ("com.github.lainsce.quilter.desktop");
+            var app_info = new DesktopAppInfo ("io.github.teamcons.storyline.desktop");
             if (app_info == null) {
-                warning ("AppInfo object not found for Quilter.");
+                warning ("AppInfo object not found for storyline.");
                 return;
             }
 

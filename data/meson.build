@@ -87,12 +87,3 @@ install_subdir(
     'wordlist',
     install_dir: configdir
 )
-
-# Resources
-resources = gnome.compile_resources(
-  'resources',
-  'app.gresource.xml',
-  gresource_bundle: true,
-  source_dir: meson.current_build_dir()
-)
-

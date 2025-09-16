@@ -1,3 +1,33 @@
+#======== SETTINGS ========
+install_data (
+    'storyline.gschema.xml',
+    install_dir: get_option('datadir') / 'glib-2.0' / 'schemas',
+    rename: meson.project_name() + '.gschema.xml'
+)
+
+#======== Internationalization ========
+#Translate and install our .desktop file
+i18n.merge_file(
+    input: 'storyline.desktop.in',
+    output: meson.project_name() + '.desktop',
+    po_dir: meson.project_source_root() / 'po' / 'extra',
+    type: 'desktop',
+    install: true,
+    install_dir: get_option('datadir') / 'applications'
+)
+
+#Translate and install our .metainfo file
+i18n.merge_file(
+    input: 'storyline.metainfo.xml.in',
+    output: meson.project_name() + '.metainfo.xml',
+    po_dir: meson.project_source_root() / 'po' / 'extra',
+    install: true,
+    install_dir: get_option('datadir') / 'metainfo'
+)
+
+
+
+
 fs = import('fs')
 
 icon_sizes = ['32', '48', '64', '128']
@@ -21,28 +51,6 @@ endforeach
 install_data(
     join_paths('icons', '16', 'io.github.teamcons.storyline-symbolic.svg'),
     install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'symbolic', 'apps')
-)
-
-install_data(
-    'io.github.teamcons.storyline.gschema.xml',
-    install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
-)
-
-i18n.merge_file(
-    input: 'io.github.teamcons.storyline.desktop.in',
-    output: 'io.github.teamcons.storyline.desktop',
-    po_dir: join_paths(meson.source_root(), 'po', 'extra'),
-    type: 'desktop',
-    install: true,
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
-i18n.merge_file(
-    input: 'io.github.teamcons.storyline.appdata.xml.in',
-    output: 'io.github.teamcons.storyline.appdata.xml',
-    po_dir: join_paths(meson.source_root(), 'po', 'extra'),
-    install: true,
-    install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 install_data(

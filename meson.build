@@ -13,7 +13,7 @@ add_project_arguments(
 )
 
 asresources = gnome.compile_resources(
-    'as-resources', 'data/app.gresource.xml',
+    'as-resources', 'data/storyline.gresource.xml',
     source_dir: 'data',
     c_name: 'as'
 )

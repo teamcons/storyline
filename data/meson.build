@@ -28,28 +28,31 @@ i18n.merge_file(
 
 
 
+#======== ICONS ========
+
+# Install our icons in all the required sizes
+icon_sizes = ['16', '24', '32', '48', '64', '128']
+
+
 fs = import('fs')
-
-icon_sizes = ['32', '48', '64', '128']
-
 configdir = fs.expanduser('~/.local/share/io.github.teamcons.storyline')
 
 foreach i : icon_sizes
     install_data(
-        join_paths('icons', i, 'io.github.teamcons.storyline.svg'),
+        join_paths('icons', i, i + '.svg'),
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps')
     )
 endforeach
 
 foreach i : icon_sizes
     install_data(
-        join_paths('icons', i, 'io.github.teamcons.storyline.svg'),
+        join_paths('icons', i, i + '.svg'),
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i + '@2', 'apps')
     )
 endforeach
 
 install_data(
-    join_paths('icons', '16', 'io.github.teamcons.storyline-symbolic.svg'),
+    join_paths('icons', '16', '16.svg'),
     install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'symbolic', 'apps')
 )
 
